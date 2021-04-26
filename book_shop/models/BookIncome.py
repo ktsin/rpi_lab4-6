@@ -8,3 +8,9 @@ class BookIncome(models.Model):
     category = models.ForeignKey(KnowledgeCategory, on_delete=models.DO_NOTHING, verbose_name='Category')
     in_count = models.PositiveIntegerField(verbose_name='Income count')
     in_date = models.DateField(verbose_name="Income date")
+
+    def __str__(self):
+        return f'{self.book.__str__()} --  {self.in_date} : {self.in_count} '
+
+    def __unicode__(self):
+        return f'{self.book.__str__()} --  {self.in_date} : {self.in_count} '

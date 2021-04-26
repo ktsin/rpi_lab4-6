@@ -10,3 +10,9 @@ class Book(models.Model):
     name = models.CharField(max_length=255, verbose_name="Book's name")
     publish_date = models.PositiveSmallIntegerField(verbose_name='Year of publishing')
     price = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='Price')
+
+    def __str__(self):
+        return f'{self.name} -- {self.authors}; {self.publish_date} -> {self.category_id.name}'
+
+    def __unicode__(self):
+        return self.__str__()
