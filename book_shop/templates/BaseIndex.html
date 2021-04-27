@@ -10,25 +10,33 @@
     <link rel="stylesheet" href={% static 'css/bootstrap.min.css' %}/>
 </head>
 <body>
-<div class="container">
+<div class="container" style="margin: 0; max-width: 100%; height: 100%;">
     <!-- Заголовок с картинкой -->
     <div class="row bg-dark">
         <nav class="navbar navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
-      Bootstrap
-    </a>
-  </div>
-</nav>
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src={% static 'img/bootstrap/book-half.svg' %} alt="" width="30" height="24"
+                         class="d-inline-block align-text-top">
+                    Bookshelf store:)
+                </a>
+            </div>
+        </nav>
     </div>
     <!-- меню -->
-    <div class="row">
-
+    <div class="row" style="background-color: #f2ffe8">
+        <nav class="nav">
+            <a class="nav-link active" aria-current="page" href="#">Active</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </nav>
     </div>
     <div class="row">
-        <div class="col">
-
+        <div class="col" style="width: 20%; background-color: #f0ede8">
+            <p>
+                sdkjbfjsbdjk
+            </p>
         </div>
         <div class="col">
 
