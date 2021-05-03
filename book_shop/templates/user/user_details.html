@@ -1,0 +1,62 @@
+{% extends "BaseIndex.html" %}
+
+{% block main_content %}
+
+<div class="container">
+   <div class="row g-2">
+      <div class="col-3 h-100">
+         <div class="p-3 border bg-light">
+            <div class="list-group">
+               <a href="/profile/Sigarets/" type="button" class="list-group-item list-group-item-action">Сигареты</a>
+               <a href="/profile/Gums/" type="button" class="list-group-item list-group-item-action">Жвачки</a>
+               <a href="/profile/Crisps/" type="button" class="list-group-item list-group-item-action">Чипсы</a>
+               <a href="/profile/Cookies/" type="button" class="list-group-item list-group-item-action">Печенье</a>
+               <a href="/profile/About/" type="button" class="list-group-item list-group-item-action">О сайте</a>
+            </div>
+         </div>
+      </div>
+      <div class="col-9 h-100">
+         <div class="p-3 border bg-light">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-8 fs-3">{{ category }}</div>
+                  <div class="col-sm-4"></div>
+               </div>
+               <div class="row">
+                  <div class="col-sm-7"></div>
+                  <div class="col-sm-5">
+                     <form action="/profile/" method="POST" class="d-flex">
+                        {% csrf_token %}
+                        <input name="productName" class="form-control mx-2" placeholder="Название товара">
+                        <button class="btn btn-warning" type="submit">Найти</button>
+                     </form>
+                  </div>
+               </div>
+               <div class="row">
+                   <div class="mt-3 fs-5 fw-light">{{ info }}</div>
+                  <table class="table table-striped">
+                     <thead>
+                        <tr>
+                           {% for col_name in cols  %}
+                           <th scope="col">{{col_name}}</th>
+                           {% endfor %}
+                        </tr>
+                     </thead>
+                     <tbody>
+                        {% for row in rows %}
+                        <tr>
+                           {% for cell in row %}
+                           <td>{{ cell }}</td>
+                           {% endfor %}
+                        </tr>
+                        {% endfor %}
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+{% endblock %}

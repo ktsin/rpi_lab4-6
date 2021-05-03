@@ -21,5 +21,10 @@ import book_shop.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', book_shop.views.index),
+    path('', book_shop.views.index),
+    path('about/', book_shop.views.about),
+    path('register/', book_shop.views.register_user),
+    path('login/', book_shop.views.auth_user),
+    path('books/', book_shop.views.all_books),
+path('books/', book_shop.views.all_books)
 ]
