@@ -88,3 +88,13 @@ def all_books_by_category(request, id):
         return render(request, 'book_shop/main_books.html', {'categories': KnowledgeCategory.objects.all(),
                                                              'books': Book.objects.filter(category_id=id)})
     return None
+
+
+def adm_pnl(request):
+    return render(request, "user/admin_panel.html", {'header':["id", "category_id", "authors", "name", "publish_date", "price"],
+                                                     'book_data':Book.objects.all()})
+
+def delete_book(request, id):
+    Book.delete(Book.objects.get(id=id))
+    return render(request, "user/admin_panel.html", {'header':["id", "category_id", "authors", "name", "publish_date", "price"],
+                                                     'book_data':Book.objects.all()})

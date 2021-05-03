@@ -27,4 +27,6 @@ urlpatterns = [
     path('login/', book_shop.views.auth_user),
     path('books/', book_shop.views.all_books),
     path('books/<int:id>', book_shop.views.all_books_by_category),
+    path('adminpanel/', book_shop.views.adm_pnl),
+    path('books/delete/<int:id>', book_shop.views.delete_book),
 ]
