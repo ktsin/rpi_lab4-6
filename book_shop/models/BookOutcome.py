@@ -4,7 +4,7 @@ from .KnowledgeCategory import KnowledgeCategory
 
 
 class BookOutcome(models.Model):
-    book = models.ForeignKey(Book, on_delete=models.DO_NOTHING, verbose_name='Book')
+    book = models.ForeignKey(Book, on_delete=models.SET_NULL, verbose_name='Book', null=True)
     category = models.ForeignKey(KnowledgeCategory, on_delete=models.DO_NOTHING, verbose_name='Category')
     out_count = models.PositiveIntegerField(verbose_name='Outcome count')
     out_date = models.DateField(verbose_name="Outcome date")
