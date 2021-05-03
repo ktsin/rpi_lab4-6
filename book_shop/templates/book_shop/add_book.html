@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "BaseIndex.html" %}
 
-</body>
-</html>
+{% block main_content %}
+    <div class="row col-8 bg-light shadow border-primary">
+        <form method="POST" class="col-6">
+            {% for field in form %}
+                <div class="mb-3">
+                    {{ field.errors }}
+                    {{ field.label_tag }}{{ field }}
+                    {% if field.help_text %}
+                        <span class="form-text help">{{ field.help_text|safe }}</span>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </form>
+    </div>
+{% endblock %}

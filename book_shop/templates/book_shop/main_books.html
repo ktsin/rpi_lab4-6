@@ -4,11 +4,34 @@
     <div class="container border shadow">
         <div class="list-group">
             {% for i in categories %}
-                <a class="list-group-item list-group-item-action" href="/books/{{ i.id }}">
-                    {{ i.name }}
-                </a>
+                {% if i.id != 0 %}
+                    <a class="list-group-item list-group-item-action" href="/books/{{ i.id }}">
+                        {{ i.name }}
+                    </a>
+                {% endif %}
             {% endfor %}
         </div>
     </div>
 {% endblock %}
+
+{% block main_content %}
+    <div class="d-flex" style="flex-wrap: wrap;">
+        {% for b in books %}
+            <div class="card col-2" style="margin: 5px;">
+                <div class="card-header">
+                    Автор: {{ b.authors.name }}
+                </div>
+                <div class="card-body">
+                    {{ b.name }}, {{ b.publish_date }}
+                </div>
+                <div class="card-footer">
+                    Цена: {{ b.price }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+
 

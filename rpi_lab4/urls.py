@@ -26,5 +26,5 @@ urlpatterns = [
     path('register/', book_shop.views.register_user),
     path('login/', book_shop.views.auth_user),
     path('books/', book_shop.views.all_books),
-path('books/', book_shop.views.all_books)
+    path('books/<int:id>', book_shop.views.all_books_by_category),
 ]
