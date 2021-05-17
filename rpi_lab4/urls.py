@@ -28,5 +28,34 @@ urlpatterns = [
     path('books/', book_shop.views.all_books),
     path('books/<int:id>', book_shop.views.all_books_by_category),
     path('adminpanel/', book_shop.views.adm_pnl),
+
+    # books CRUD
     path('books/delete/<int:id>', book_shop.views.delete_book),
+    path('books/edit/<int:id>', book_shop.views.delete_book),
+    path('books/add/', book_shop.views.delete_book),
+    # end books
+
+    # users CRUD
+    path('users/delete/<int:id>', book_shop.views.delete_book),
+    path('users/edit/<int:id>', book_shop.views.delete_book),
+    path('users/add/', book_shop.views.delete_book),
+    # end users
+
+    # authors CRUD
+    path('authors/delete/<int:id>', book_shop.views.delete_book),
+    path('authors/edit/<int:id>', book_shop.views.delete_book),
+    path('authors/add/', book_shop.views.delete_book),
+    # end authors
+
+    # income CRUD
+    path('income/delete/<int:id>', book_shop.views.delete_book),
+    path('income/edit/<int:id>', book_shop.views.delete_book),
+    path('income/add/', book_shop.views.delete_book),
+    # end income
+
+    # outcome CRUD
+    path('outcome/delete/<int:id>', book_shop.views.delete_book),
+    path('outcome/edit/<int:id>', book_shop.views.delete_book),
+    path('outcome/add/', book_shop.views.delete_book),
+    # end outcome
 ]

@@ -114,8 +114,19 @@ def all_books_by_category(request, id):
 
 def adm_pnl(request):
     userBar = render_to_string('user/user_bar.html', {'isLoggedIn': isLoggedIn(request)}, request=request)
-    return render(request, "user/admin_panel.html", {'header':["id", "category_id", "authors", "name", "publish_date", "price"],
+
+    return render(request, "user/admin_panel.html", {'header_book':["id", "category_id", "authors", "name", "publish_date", "price", ""],
                                                      'book_data':Book.objects.all(),
+                                                     'header_author': ["id", "name", ""],
+                                                     'author_data': Author.objects.all(),
+                                                     'header_income': ["id", "in count", "in date", "category", "book", ""],
+                                                     'income_data': BookIncome.objects.all(),
+                                                     'header_outcome': ["id", "in count", "in date", "price", "category", "book",
+                                                                       ""],
+                                                     'outcome_data': BookOutcome.objects.all(),
+                                                     'header_user': ["id", "email", "role", ""],
+                                                     'user_data': AdvUser.objects.all(),
+
                                                      'user_content': userBar})
 
 

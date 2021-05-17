@@ -4,7 +4,7 @@
     <div class="container">
         <h2>
             Книги
-        </h2>
+        </h2> <a class="link-success" href="/books/add">Add new!</a>
         <div class="row">
             <table class="table table-bordered">
                 <thead>
@@ -47,7 +47,7 @@
 
         <h2>
             Авторы
-        </h2>
+        </h2> <a class="link-success" href="/authors/add">Add new!</a>
         <div class="row">
             <table class="table table-bordered">
                 <thead>
@@ -64,23 +64,11 @@
                             {{ r.id }}
                         </td>
                         <td>
-                            {{ r.category_id }}
-                        </td>
-                        <td>
-                            {{ r.authors }}
-                        </td>
-                        <td>
                             {{ r.name }}
                         </td>
                         <td>
-                            {{ r.publish_date }}
-                        </td>
-                        <td>
-                            {{ r.price }}
-                        </td>
-                        <td>
-                            <span><a class="link-danger" href="/books/delete/{{ r.id }}">Удал.</a> | <a
-                                    class="link-warning" href="/books/edit/{{ r.id }}">Ред.</a></span>
+                            <span><a class="link-danger" href="/authors/delete/{{ r.id }}">Удал.</a> | <a
+                                    class="link-warning" href="/authors/edit/{{ r.id }}">Ред.</a></span>
                         </td>
                     </tr>
                 {% endfor %}
@@ -90,7 +78,7 @@
 
         <h2>
             Приходы
-        </h2>
+        </h2> <a class="link-success" href="/incomes/add">Add new!</a>
         <div class="row">
             <table class="table table-bordered">
                 <thead>
@@ -107,19 +95,16 @@
                             {{ r.id }}
                         </td>
                         <td>
-                            {{ r.category_id }}
+                            {{ r.in_count }}
                         </td>
                         <td>
-                            {{ r.authors }}
+                            {{ r.in_date }}
                         </td>
                         <td>
-                            {{ r.name }}
+                            {{ r.category }}
                         </td>
                         <td>
-                            {{ r.publish_date }}
-                        </td>
-                        <td>
-                            {{ r.price }}
+                            {{ r.book }}
                         </td>
                         <td>
                             <span><a class="link-danger" href="/books/delete/{{ r.id }}">Удал.</a> | <a
@@ -133,7 +118,7 @@
 
         <h2>
             Расходы
-        </h2>
+        </h2> <a class="link-success" href="/outcomes/add">Add new!</a>
         <div class="row">
             <table class="table table-bordered">
                 <thead>
@@ -150,19 +135,19 @@
                             {{ r.id }}
                         </td>
                         <td>
-                            {{ r.category_id }}
+                            {{ r.out_count }}
                         </td>
                         <td>
-                            {{ r.authors }}
+                            {{ r.out_date }}
                         </td>
                         <td>
-                            {{ r.name }}
+                            {{ r.out_price }}
                         </td>
                         <td>
-                            {{ r.publish_date }}
+                            {{ r.category }}
                         </td>
                         <td>
-                            {{ r.price }}
+                            {{ r.book }}
                         </td>
                         <td>
                             <span><a class="link-danger" href="/books/delete/{{ r.id }}">Удал.</a> | <a
@@ -176,7 +161,7 @@
 
         <h2>
             Пользователи
-        </h2>
+        </h2> <a class="link-success" href="/users/add">Add new!</a>
         <div class="row">
             <table class="table table-bordered">
                 <thead>
@@ -193,19 +178,10 @@
                             {{ r.id }}
                         </td>
                         <td>
-                            {{ r.category_id }}
+                            {{ r.email }}
                         </td>
                         <td>
-                            {{ r.authors }}
-                        </td>
-                        <td>
-                            {{ r.name }}
-                        </td>
-                        <td>
-                            {{ r.publish_date }}
-                        </td>
-                        <td>
-                            {{ r.price }}
+                            {{ r.rl }}
                         </td>
                         <td>
                             <span><a class="link-danger" href="/books/delete/{{ r.id }}">Удал.</a> | <a
