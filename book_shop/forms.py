@@ -30,15 +30,11 @@ class AddBook(forms.Form):
     Price = forms.IntegerField(label='Введите цену')
 
 
-class GetAdditionalInfo(forms.Form):
-    Id = forms.IntegerField(label='Введите идентификатор')
+class DeleteBook(forms.Form):
+    Name = forms.IntegerField(min_value=0,label='Введите номер книги')
 
 
-class DeleteProduct(forms.Form):
-    Name = forms.CharField(max_length=30,label='Введите название товара')
-
-
-class UpdateProduct(forms.Form):
-    Name = forms.CharField(max_length=30,label='Введите название товара')
-    NewPrice = forms.IntegerField(label='Введите новую цену')
+class UpdateBook(forms.Form):
+    Name = forms.IntegerField(label='Введите номер книги: ')
+    NewName = forms.CharField(min_length=255,label='Введите новое название: ')
 # конец форм для книг
