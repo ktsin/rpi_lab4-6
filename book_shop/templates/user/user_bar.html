@@ -1,15 +1,36 @@
-{% block user_bar %}
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <button class="btn btn-danger">
-                Logout
-            </button>
-            <button class="btn btn-success">
-                Login
-            </button>
-                        <button class="btn btn-success">
-                Login
-            </button>
-        </div>
-    </nav>
-{% endblock %}
+<nav class="navbar navbar-light bg-secondary">
+    <div class="container-fluid justify-content-end align-content-end">
+        <form action="/books/" method="post" class="form-inline">
+            <div class="form-group">
+
+                <input type="text" class="form-control" name="bookName" id="bookName" placeholder="Book name">
+                <button type="submit" class="btn-sm btn-success">Search for it!</button>
+            </div>
+        </form>
+        {% if isLoggedIn %}
+            <a href="/profile">
+                <button class="btn btn-info m-1">
+                    Profile
+                </button>
+            </a>
+            <a href="/logout">
+                <button class="btn btn-danger m-1">
+                    Logout
+                </button>
+            </a>
+        {% else %}
+
+            <a href="/register">
+                <button class="btn btn-info m-1">
+                    Register
+                </button>
+            </a>
+            <a href="/login">
+                <button class="btn btn-success m-1">
+                    Login
+                </button>
+            </a>
+        {% endif %}
+
+    </div>
+</nav>
