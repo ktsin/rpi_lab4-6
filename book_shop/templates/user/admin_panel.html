@@ -8,7 +8,7 @@
         <div class="row">
             <table class="table table-bordered">
                 <thead>
-                {% for h in header %}
+                {% for h in header_book %}
                     <td>
                         {{ h | safe }}
                     </td>
@@ -51,14 +51,14 @@
         <div class="row">
             <table class="table table-bordered">
                 <thead>
-                {% for h in header %}
+                {% for h in header_author %}
                     <td>
                         {{ h | safe }}
                     </td>
                 {% endfor %}
                 </thead>
                 <tbody>
-                {% for r in  book_data %}
+                {% for r in  author_data %}
                     <tr>
                         <td>
                             {{ r.id }}
@@ -94,14 +94,14 @@
         <div class="row">
             <table class="table table-bordered">
                 <thead>
-                {% for h in header %}
+                {% for h in header_income %}
                     <td>
                         {{ h | safe }}
                     </td>
                 {% endfor %}
                 </thead>
                 <tbody>
-                {% for r in  book_data %}
+                {% for r in  income_data %}
                     <tr>
                         <td>
                             {{ r.id }}
@@ -137,14 +137,14 @@
         <div class="row">
             <table class="table table-bordered">
                 <thead>
-                {% for h in header %}
+                {% for h in header_outcome %}
                     <td>
                         {{ h | safe }}
                     </td>
                 {% endfor %}
                 </thead>
                 <tbody>
-                {% for r in  book_data %}
+                {% for r in  outcome_data %}
                     <tr>
                         <td>
                             {{ r.id }}
@@ -174,20 +174,20 @@
             </table>
         </div>
 
-            <h2>
-                Пользователи
+        <h2>
+            Пользователи
         </h2>
         <div class="row">
             <table class="table table-bordered">
                 <thead>
-                {% for h in header %}
+                {% for h in header_user %}
                     <td>
                         {{ h | safe }}
                     </td>
                 {% endfor %}
                 </thead>
                 <tbody>
-                {% for r in  book_data %}
+                {% for r in  user_data %}
                     <tr>
                         <td>
                             {{ r.id }}
